@@ -1,2 +1,2 @@
 # qt-universal-widgets
-Universal widgets based on QT
+Universal widgets based on Qt
