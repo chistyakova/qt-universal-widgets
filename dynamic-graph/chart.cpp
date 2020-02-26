@@ -24,16 +24,24 @@ Chart::Chart(QGraphicsItem *parent, Qt::WindowFlags wFlags):
     QAreaSeries *series = new QAreaSeries(m_series);
 
     QPen pen(Qt::green);
-    QBrush brush(QColor(100,0,255,128) );
+    QBrush brush(QColor(100,0,255,128));
     pen.setWidth(3);
+
     series->setPen(pen);
     series->setBrush(brush);
     m_series->append(m_x, m_y);
 
     addSeries(series);
+    legend()->hide();
     createDefaultAxes();
     setAxisX(m_axis, series);
     m_axis->setTickCount(5);
+    m_axis->setMinorTickCount(5);
+    QPen axisPen(Qt::darkGray);
+    axisPen.setWidth(2);
+    axisX()->setLinePen(axisPen);
+    axisY()->setLinePen(axisPen);
+    axisX()->setMinorGridLineVisible(true);
 
     yMax = 10;
     yMin = -5;
