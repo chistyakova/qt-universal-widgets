@@ -1,5 +1,6 @@
 #include "chart.h"
 #include <QtCharts/QAbstractAxis>
+#include <QtCharts/QAreaSeries>
 #include <QtCharts/QValueAxis>
 #include <QtCharts/QLineSeries>
 #include <QTime>
@@ -20,14 +21,18 @@ Chart::Chart(QGraphicsItem *parent, Qt::WindowFlags wFlags):
 
     m_series = new QLineSeries(this);
 
-    QPen pen(Qt::red);
+    QAreaSeries *series = new QAreaSeries(m_series);
+
+    QPen pen(Qt::green);
+    QBrush brush(QColor(100,0,255,128) );
     pen.setWidth(3);
-    m_series->setPen(pen);
+    series->setPen(pen);
+    series->setBrush(brush);
     m_series->append(m_x, m_y);
 
-    addSeries(m_series);
+    addSeries(series);
     createDefaultAxes();
-    setAxisX(m_axis, m_series);
+    setAxisX(m_axis, series);
     m_axis->setTickCount(5);
 
     yMax = 10;
