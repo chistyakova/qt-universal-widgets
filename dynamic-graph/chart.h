@@ -19,6 +19,7 @@ public:
     Chart(QGraphicsItem *parent = 0, Qt::WindowFlags wFlags = 0);
     virtual ~Chart();
 
+    void startFlight();
 public slots:
     void handleTimeout();
 
@@ -26,7 +27,7 @@ private:
     QTimer m_timer;
     QLineSeries *m_series;
     QStringList m_titles;
-    QValueAxis *m_axis;
+    QValueAxis *m_axisX;
     qreal m_step;
     qreal m_x;
     qreal m_y;

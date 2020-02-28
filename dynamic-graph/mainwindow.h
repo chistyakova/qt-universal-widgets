@@ -26,6 +26,9 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+public slots:
+    void on_pushButton_clicked();
+
 private:
     Ui::MainWindow  *ui;
     Chart           *m_chart;
