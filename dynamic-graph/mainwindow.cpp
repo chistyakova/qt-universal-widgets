@@ -17,6 +17,7 @@ MainWindow::MainWindow(QWidget *parent)
     m_chart = new Chart;
     QChartView *chartView = new QChartView(m_chart);
     chartView->setMinimumSize(800, 600);
+    chartView->setRenderHint(QPainter::Antialiasing); // Сглаживание линий.
     ui->mainLayout->addWidget(chartView);
 }
 
