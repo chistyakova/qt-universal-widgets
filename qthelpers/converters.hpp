@@ -23,7 +23,7 @@ class Converters {
         {"B", " Б"}, {"KB", " КБ"}, {"MB", " МБ"}, {"GB", " ГБ"}, {"TB", " ТБ"},
     };
     QMap<QString, QString>* t = &translations_en;
-    if (qEnvironmentVariable("LANG").toLower().contains("ru"))
+    if (qgetenv("LANG").toLower().contains("ru"))
       t = &translations_ru;
 
     QString number;
