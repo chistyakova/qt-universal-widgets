@@ -17,10 +17,10 @@ class Converters {
     // навсегда. Язык определяем так же стандартным способом - переменной
     // окружения LANG.
     QMap<QString, QString> translations_en = {
-        {"B", "B"}, {"KB", "KB"}, {"MB", "MB"}, {"GB", "GB"}, {"TB", "TB"},
+        {"B", " B"}, {"KB", " KB"}, {"MB", " MB"}, {"GB", " GB"}, {"TB", " TB"},
     };
     QMap<QString, QString> translations_ru = {
-        {"B", "Б"}, {"KB", "КБ"}, {"MB", "МБ"}, {"GB", "ГБ"}, {"TB", "ТБ"},
+        {"B", " Б"}, {"KB", " КБ"}, {"MB", " МБ"}, {"GB", " ГБ"}, {"TB", " ТБ"},
     };
     QMap<QString, QString>* t = &translations_en;
     if (qEnvironmentVariable("LANG").toLower().contains("ru"))
